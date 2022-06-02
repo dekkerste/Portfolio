@@ -1,0 +1,309 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    overflow: hidden;
+}
+
+body {    
+    background-color: lightgrey;
+    font-size: large; 
+}
+
+@media screen and (orientation:portrait) {
+    .list1 > div, .list2 > div {
+        background-color: #0D6EFD;
+        color: white;
+        border-color: black;
+        border-bottom: 2px;
+        border-style: solid;
+        text-align: center;
+        font-size: larger;
+        font-weight: bold;
+        padding: 10px;
+        height: 73px;
+    }
+}
+
+.content {
+    margin-left: 5%;
+    margin-right: 5%;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    background-color: white;
+    padding: 10px;
+    border-style: none solid;
+    min-height: 100vh;
+}
+
+.nav {
+    background-color: #0D6EFD; width: 100%; height: 75px;
+}
+
+.nav-btn {
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    padding: 10px;
+    font-size: 50px;
+    border-radius: 10px;
+    background-color: rgb(74, 137, 255);
+    box-shadow: rgb(49, 49, 49) 0.2em 0.2em 0.1em ;
+}
+
+.votinglocation {
+    margin: 15px;
+    padding: 15px;
+    background-color: #0D6EFD;
+    color: white;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+}
+
+.list1 {
+    margin: 15px;
+    width: 50%;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.list1 > div {
+    background-color: #0D6EFD;
+    color: white;
+    border-color: black;
+    border-bottom: 2px;
+    border-style: solid;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.list1 > ul {
+    height: 325px; 
+    overflow: hidden; 
+    overflow-y: scroll;
+}
+
+.list1 > ul > li {
+    padding: 20px 0px;
+    width: 100%;
+}
+
+.listbutton {
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.list2 {
+    margin: 15px;
+    width: 50%;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.list2 > div {
+    background-color: #0D6EFD;
+    color: white;
+    border-color: black;
+    border-bottom: 2px;
+    border-style: solid;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.list2 > h1 {
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.list2 > p {
+    padding: 20px;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #0D6EFD;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    color: white;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    padding: 20px;
+    transition: all 0.5s;
+    margin: 15px;
+    text-decoration: none;
+    vertical-align: middle;
+    }
+
+.button span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+    color: black;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 70%;
+    position: relative;
+}
+
+.popup h4 {
+    margin-top: 0;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.popup > .text {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 50px;
+    padding: 10px;
+}
+
+.logout, .nextvote, .back, .finish {
+    width: 50%;
+}
+
+.nextvote > div, .finish > div {
+    float: right;
+}
+
+.center-1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.center-2 {
+    text-align: center;
+}
+
+.title {
+    font-size: 60px;
+    color: #fff;
+}
+
+.homepage-title {
+    font-size: 60px;
+    color: #000;
+}
+
+.form {
+    background: #f2f2f2;
+    border: 1px solid;
+}
+
+.form-2 {
+    background: #f2f2f2;
+    border: 1px solid;
+    margin-top: 50px;
+}
+
+.index-form {
+    background: #f2f2f2;
+    border: 1px solid;
+    border-style: none solid;
+    height: 100vh;
+}
+
+.confirmed-title {
+    text-align: center;
+    background: #0D6EFD;
+    margin-top: 15px;
+}
+
+.login-img {
+    margin-top: 15px;
+    border: 3px solid #e6e6e6;
+    height: 70%;
+    width: 100%;
+}
+
+.error-title {
+    text-align: center;
+    background: red;
+    margin-top: 15px;
+}
+
+.btn-size {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.breakpoint {
+    margin-bottom: 25px;
+}
