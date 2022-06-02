@@ -1,0 +1,414 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
+}
+
+:root {
+  --colorPink: #FED0D1;
+  --colorRed: #F34A4E;
+  --bg-color: black;
+  --text-color: #fefefe;
+  --text-dark-color: #434446;
+  /* dark colors */
+  --dark-background: #434446;
+  --dark-text-color: #DBDCDE;
+  --text-color-secondary: #FED0D1;
+  /* animation */
+  --transition: all .275s ease-out;
+  /* shadow */
+  --boxshadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  background-color: var(--dark-background);
+  color: var(--dark-text-color);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+}
+
+/*
+body::before {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.18;
+    background-size: 50px 50px;
+    background-image: linear-gradient(
+        transparent 0%,
+        transparent 98%,
+        var(--text-color) 98%,
+        var(--text-color) 100%
+      ),
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        transparent 98%,
+        var(--text-color) 98%,
+        var(--text-color) 100%
+      );
+  }
+*/
+
+.holy-grail header,
+.holy-grail footer,
+.hg-sidebar,
+.holy-grail-content {}
+
+.holy-grail header,
+.holy-grail footer {}
+
+.holy-grail header {
+  background-color: #434446;
+  color: #DBDCDE;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.holy-grail header * {
+  margin: 0
+}
+
+.holy-grail body {
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .holy-grail header {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.holy-grail footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+
+.hg-sidebar {
+  background-color: var(--dark-background);
+  color: var(--dark-text-color);
+  padding: 10px;
+  overflow: auto;
+}
+
+/**
+     * Flex things:
+     * — Mobile first
+     * — Responsive
+     */
+/**
+ * Make body at least 100% height
+ * You can also use a combination
+ * of height: 100% in <html> and
+ * min-height: 100% in <body>.
+ */
+.holy-grail main {
+  height: 100vh;
+}
+
+/**
+ * Let's do a column distribution
+ * (mobile first)
+ * flex value is 1 1 auto to make
+ * body skrinkable and extensible
+ */
+.holy-grail,
+.holy-grail-body {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+
+/**
+ * Content body item is made
+ * extensible too.
+ */
+.holy-grail-content {
+  flex: 1 1 auto;
+}
+
+/**
+ * Put the first sidebar before content.
+ * If you need sidebar to be before content
+ * only in big screen put those 3 next lines
+ * in @media block.
+ */
+.holy-grail-sidebar-1 {
+  order: -1;
+}
+
+/**
+ * Let's introduce bigger screen
+ */
+
+@media (min-width: 768px) {
+
+  /**
+	 * Body items are now side by side
+	 */
+  .holy-grail-body {
+    flex-direction: row;
+  }
+
+  /**
+	 * Sidebars have a basic 260 width
+	 * and are not really flexible anymore
+	 */
+  .hg-sidebar {
+    flex: 0 0 460px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+
+button,
+input[type='submit'] {
+  font-size: 14px;
+  display: inline-block;
+  border: 2px solid #555;
+  outline: none;
+  font-weight: bold;
+  background-color: #04AA6D;
+  color: #fff;
+  padding: 12px 16px;
+  margin: 8px 0px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all .275s;
+  width: 100%;
+  user-select: none;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+select {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+fieldset {
+  border: 2px solid #555;
+  margin-bottom: 1em;
+}
+
+legend {
+  font-weight: bold;
+}
+
+button::after {}
+
+button:hover,
+button:focus {
+  opacity: 0.8;
+}
+
+input[type="text"],
+[type="password"],
+[type="search"] {
+  border: 2px solid #555;
+  border-radius: 6px;
+  width: 100%;
+  padding: 12px 16px;
+  margin: 8px 0;
+  display: inline-block;
+  outline: none;
+}
+
+input[type="text"]:focus,
+[type="password"]:focus {
+  border: 2px solid #04AA6D;
+  border-radius: 6px;
+  width: 100%;
+  padding: 12px 16px;
+  margin: 8px 0;
+  display: inline-block;
+  outline: none;
+}
+
+
+input[type=radio] {
+  border-radius: 6px;
+  border: 2px solid #555;
+  padding: 0.5em;
+  -webkit-appearance: none;
+}
+
+input[type=radio]:checked {
+  background: url(data:image/gif;base64,R0lGODlhAQABAPAAAP///////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==) no-repeat center center;
+  background-size: 9px 9px;
+  border-radius: 6px;
+}
+
+input[type=radio]:focus {
+  outline-color: transparent;
+}
+
+
+label {
+  margin: 4px 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+img:hover {
+  opacity: 0.8;
+}
+
+img {
+  height: 50px;
+}
+
+a {
+  color: #04AA6D;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.username {
+  padding: 0 10px;
+  font-weight: bold;
+}
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .active:after {
+    content: "\2212";
+  }
+
+  .panel {
+    max-height: 0;
+    overflow: auto;
+    transition: var(--transition);
+    color: var(--dark-text-color);
+    /* margin-top: 1em; */
+    padding: 0 18px;
+  }
+
+/* .hg-sidebar:not(:last-child) {
+    border-bottom: 1px solid var(--text-color);
+} */
+
+/* modal for login */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+#legenda {}
+
+.red {
+  background-color: red;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px;
+  font-weight: bold;
+}
+
+.blue {
+  font-weight: bold;
+
+  background-color: blue;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.grey {
+  font-weight: bold;
+  background-color: grey;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px;
+}

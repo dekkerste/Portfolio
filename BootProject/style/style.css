@@ -1,0 +1,292 @@
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+:root {
+  /* Color vars */
+  --primarText: #555;
+  --secondaryText: #333;
+  --primaryColor: #343434;
+  --greenColor: #4caf50;
+  --blueColor: #008cba;
+  --redColor: #f44336;
+  --greyColor: #e7e7e7;
+  --blackColor: #555555;
+  --layout-gutter: 5vw;
+  --readable-black: #333333;
+  --readable-white: #D4D4D4;
+}
+
+html {
+  font: 400 16px/1.5 Arial;
+  box-sizing: border-box;
+  height: 100vh;
+  line-height: 1.375;
+  color: var(--readable-black);
+text-rendering: optimizeLegibility !important;
+-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+margin: 0;
+}
+
+html, body {
+  background-color: #424d5c;
+  color: #e3e4e4;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "content content side"
+    "content content side"
+    "footer footer logo";
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-areas:
+      "content"
+      "side"
+      "footer"
+      "logo";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: auto;
+  }
+
+  nav,
+  aside {
+    margin: 0;
+  }
+}
+
+.main-head {
+  grid-area: header;
+}
+.content {
+  grid-area: content;
+}
+.main-nav {
+  grid-area: nav;
+}
+.side {
+  grid-area: side;
+    overflow: visible;
+}
+.logo {
+  grid-area: logo;
+  /* Horizontal and Vertical centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-footer {
+  grid-area: footer;
+  display: flex;
+  padding: 1em;
+}
+
+.container {
+  position: relative;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--greenColor);
+}
+
+span {
+
+    margin-left: 5px;
+
+}
+
+ul {
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+
+}
+
+fieldset {
+    border: none;
+  border: 1px solid #5d757e;
+  margin: 0 10px;
+  outline: none;
+}
+
+legend {
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], [type=password], select, textarea {
+  width: 100%; /* Full width */
+  padding: 6px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  font-size: 14px;
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit], button {
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+    display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: var(--blueColor );
+  color: white;
+  padding: 14px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:disabled, button:disabled {
+  pointer-events: none;
+     opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* color classes */
+
+.primary {
+  background-color: var(--blueColor);
+}
+
+.warning {
+  color: var(--redColor);
+  font-weight: bold;
+}
+
+.succes {
+  background-color: var(--greenColor);
+}
+
+.center {
+  text-align: center;
+}
+
+.unknown {
+  background-color: var(--greyColor);
+  color: #333;
+}
+
+/* drop down menu */
+.dropbtn {
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+    display: inline-block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: var(--blueColor );
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: var(--blueColor );
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.login {
+  margin-top: 5rem;
+  background-color: #5d757e;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.admindb-main{
+  background-color: #424d5c; 
+}
+
+.admindb-box{
+  background-color: #415c7a;
+  color:#e7e7e7; 
+  font: 400 22px/1.5 Arial;
+  margin: 5rem;
+}
+.dbinfo {
+  margin: 3rem;
+}
+.dbinfo p {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.dbtitle {
+  text-align: center;
+  font-size: 2rem;
+}
+.dbbuttons {
+  text-align: center;
+}
